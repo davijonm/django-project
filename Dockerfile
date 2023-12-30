@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copie o código-fonte do Django para o contêiner
-COPY /processing ./processing
+COPY processing ./processing
 
-# Executar o servidor na inicialização do container
-CMD ["sh", "-c", "python manage.py runserver 0.0.0.0:8000"]
+# Executar o servidor na inicialização do container e aguardar 3s para o db inicializar antes
+CMD ["sh", "-c", "sleep 3 && python manage.py runserver 0.0.0.0:8000"]

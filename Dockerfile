@@ -1,5 +1,5 @@
 # Use a imagem base do Python
-FROM python:3.8
+FROM python:3.11
 
 # Configuração do diretório de trabalho
 WORKDIR /mnt/code
